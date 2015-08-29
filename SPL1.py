@@ -41,7 +41,7 @@ for col in strings:
 # Missing values have been replaced with 0s
 X = data.drop('target',1).fillna(0); y = data.target        
 
-n_range = [range(10,1000,100)]
+n_range = [range(10,1800,100)]
 n_score=[]
 for n in n_range:
     rf=RandomForestClassifier(n_estimators=n)
@@ -54,7 +54,7 @@ rf1=RandomForestClassifier(n_estimators=n_optimal)
 rf1.fit(X,y)
 
 from sklearn.neighbors import KNeighborsClassifier
-k_range = range(1,530,20)
+k_range = range(1,1800,100)
 k_score = []
 for k in k_range:
     knn = KNeighborsClassifier(n_neighbors=k)
